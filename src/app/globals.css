@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos personalizados para micro frontends */
+.micro-frontend-container {
+  @apply relative overflow-hidden;
+}
+
+.micro-frontend-container iframe {
+  @apply w-full h-full border-none;
+}
+
+/* Estilos de loading */
+.loading-spinner {
+  @apply animate-spin rounded-full border-2 border-blue-600 border-t-transparent;
+}
+
+/* Estilos de erro */
+.error-container {
+  @apply bg-red-50 border border-red-200 text-red-800 p-4 rounded-lg;
+}
+
+/* Estilos para proxy micro frontends */
+.proxy-microfrontend-container {
+  @apply transition-all duration-300;
+}
+
+.proxy-microfrontend-container:hover {
+  @apply shadow-lg;
+}
