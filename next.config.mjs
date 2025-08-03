@@ -8,8 +8,12 @@ const nextConfig = {
         destination: `${process.env.NEXT_PUBLIC_MF_URL_LP || ''}/:path*`,
       },
       {
-        source: '/auth/:path*',
-        destination: `${process.env.NEXT_PUBLIC_MF_URL_AUTH || ''}/:path*`,
+        source: '/login/:path*',
+        destination: `${process.env.NEXT_PUBLIC_MF_URL_LOGIN || ''}/:path*`,
+      },
+      {
+        source: '/register/:path*',
+        destination: `${process.env.NEXT_PUBLIC_MF_URL_REGISTER || ''}/:path*`,
       },
       {
         source: '/dashboard/:path*',

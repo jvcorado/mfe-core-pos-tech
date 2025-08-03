@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-export default function WebsitePage() {
+export default function RegisterPage() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [loading, setLoading] = useState(true);
 
@@ -17,11 +17,11 @@ export default function WebsitePage() {
         // Carrega o iframe com a aplicação da porta 3001
         if (containerRef.current) {
           const iframe = document.createElement("iframe");
-          iframe.src = process.env.NEXT_PUBLIC_MF_URL_LP || "";
+          iframe.src = process.env.NEXT_PUBLIC_MF_URL_REGISTER || "";
           iframe.style.width = "100%";
           iframe.style.height = "100vh";
           iframe.style.border = "none";
-          iframe.style.minHeight = "600px";
+          iframe.style.minHeight = "100vh";
 
           // Adicionar eventos de load
           iframe.onload = () => {
@@ -35,7 +35,7 @@ export default function WebsitePage() {
           containerRef.current.appendChild(iframe);
         }
       } catch (error) {
-        console.error("Erro ao carregar micro frontend LP:", error);
+        console.error("Erro ao carregar micro frontend REGISTER:", error);
         setLoading(false);
       }
     };
@@ -53,19 +53,22 @@ export default function WebsitePage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <main className="w-full">
-        {loading && (
-          <div className="flex items-center justify-center h-64">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-            <p className="ml-4 text-gray-600">Carregando aplicação LP...</p>
-          </div>
-        )}
-
         <div
           ref={containerRef}
           className="w-full min-h-[calc(100vh-80px)]"
-          id="lp-microfrontend"
+          id="register-microfrontend"
         />
       </main>
+
+      {/* Loading absoluto com spinner girando */}
+      {loading && (
+        <div className="absolute inset-0 bg-white bg-opacity-90 flex items-center justify-center z-50">
+          <div className="flex flex-col items-center space-y-4">
+            <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-600"></div>
+            <p className="text-gray-600 font-medium">Carregando...</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
