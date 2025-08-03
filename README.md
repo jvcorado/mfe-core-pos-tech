@@ -1,4 +1,4 @@
-# Micro Frontend Shell - Next.js
+# Micro Frontend Core - Next.js
 
 Este é um projeto de micro frontend usando Next.js como shell para integrar múltiplas aplicações.
 
