@@ -32,10 +32,10 @@ Crie um arquivo `.env.local` na raiz do projeto:
 
 ```env
 # URLs dos Micro Frontends
-NEXT_PUBLIC_MF_URL_DASHBOARD = "https://mfe-dashboard-post-tech.vercel.app/"
-NEXT_PUBLIC_MF_URL_LP = "https://mfe-landing-pos-tech.vercel.app/"
-NEXT_PUBLIC_MF_URL_LOGIN = "https://mfe-auth-post-tech.vercel.app/login"
-NEXT_PUBLIC_MF_URL_REGISTER = "https://mfe-auth-post-tech.vercel.app/register"
+NEXT_PUBLIC_MF_URL_DASHBOARD = "http://localhost:3001"
+NEXT_PUBLIC_MF_URL_LP = "http://localhost:3003"
+NEXT_PUBLIC_MF_URL_LOGIN = "http://localhost:3002/login"
+NEXT_PUBLIC_MF_URL_REGISTER = "http://localhost:3002/register"
 ```
 
 ### 3. Executar o Projeto
